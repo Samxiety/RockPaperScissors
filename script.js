@@ -58,7 +58,10 @@ function playRound() {
             break
       }
    }
-   
+   // run if player gives a different input
+   else {
+      alert(falseInput)
+   }
    
 }
 
