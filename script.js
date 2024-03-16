@@ -13,9 +13,26 @@ const lose = ("You lose this round!")
 const tie = ("That's a tie!")
 const falseInput = ("Wtf?? You have to pick Rock, Paper or Scissors to play!")
 
-/* Create a function playRound that asks for the players input,
-   compares it to the computers choice and determines the outcome of the round.
+/* Create a function playGame() that asks if you want to play the game
+   if ok start playRound, else cancel and alert "You don't want to play? Ok, bye"
+   Use a while loop.
 */
+
+function playGame() {
+   let playAgainLoop = true;
+
+   while (playAgainLoop === true) {
+      let askForPlay = "Do you want to play a round of Rock, Paper, Scissors?"
+      let cancelGame = "You don't want to play? Bye then :)"
+      if (confirm(askForPlay)) {
+         playRound()
+      } else {
+         alert(cancelGame);
+         playAgainLoop = false;
+      }
+}
+}
+
 function playRound() {
    // get playerSelect and compSelect and alert it
    let playerSelect = prompt("Type rock paper or scissors to play!").toLowerCase();
@@ -58,11 +75,11 @@ function playRound() {
             break
       }
    }
-   // run if player gives a different input
+   // run if player gives an invalid input
    else {
       alert(falseInput)
    }
    
 }
 
-playRound();
+playGame();
